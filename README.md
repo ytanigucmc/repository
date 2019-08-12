@@ -16,7 +16,7 @@ Note that necessary R packages need to be installed for successful run.
 Data Cleaning
 Missing values (MonthlyIncome and NumberOfDependents) are replaced with -1.
 In general, explanatory variables (continuious are integers) are replaced with categorical variables representing cetain range.
-
+No new features are generated for this problem, though it appers to be necessary to improves prediction accuracy.
 
 Model Fitting
 Random Forest implemented in randomFOrest pakcages is used to fit to the data.
@@ -29,3 +29,4 @@ This is because the model classifies significatly lower number of positive label
 More specifically about 6.7% of training data has entries with SeriousDlqin2yrs = 1 while the fittedmodel
 model lassifies SeriousDlqin2yrs = 1 for about 1% of training data.
 
+Classification Results on test data is in cs-output.csv.
