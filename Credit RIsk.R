@@ -150,15 +150,7 @@ rf_model = randomForest(SeriousDlqin2yrsFactor ~ RevolvingUtilizationOfUnsecured
                           NumberOfTimes90DaysLateGruped , data =training_data_mod, na.action = na.roughfix, ntree=7)
 
 
-lambda <- 10^seq(10, -2, length = 100)
-training_data_mod$SeriousDlqin2yrs = factor(training_data_mod$SeriousDlqin2yrs, levels = c(0,1))
-lasso_model<- cv.glmnet(training_data_mod_dummy$SeriousDlqin2yrs, training_data_mod_dummy[,12:66], alpha = 1,family="binomial", type.measure="auc")
 
-
-training_data_mod["SeriousDlqin2yrsFactor"] =  as.factor(training_data_mod$SeriousDlqin2yrs)
-rf_model = randomForest(SeriousDlqin2yrsFactor ~ RevolvingUtilizationOfUnsecuredLinesGrouped + ageGrouped  +    DebtRatioGrouped  + MonthlyIncomeGrouped +            
-                          NumberOfOpenCreditLinesAndLoansGrouped    +  NumberRealEstateLoansOrLinesGrouped + NumberOfDependentsGrouped +           
-                          NumberOfTimes90DaysLateGruped , data =training_data_mod, na.action = na.roughfix, ntree=11)
 ###############################################
 
 
